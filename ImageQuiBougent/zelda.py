@@ -6,22 +6,14 @@ pygame.init()
 
 # Charger l'image de fond
 def load_background_image():
-    try:
         background_image = pygame.image.load('ImageQuiBougent/image/paysage.jpg')
         return background_image
-    except pygame.error as e:
-        print(f"Erreur de chargement de l'image de fond : {e}")
-        raise
 
 # Charger l'image du joueur
 def load_player_image(normal=True):
     image_path = 'ImageQuiBougent/image/sprite.png' if normal else 'ImageQuiBougent/image/sprite_saut.png'
-    try:
-        player_image = pygame.image.load(image_path)
-        return player_image
-    except pygame.error as e:
-        print(f"Erreur de chargement de l'image du joueur : {e}")
-        raise
+    player_image = pygame.image.load(image_path)
+    return player_image
 
 # Charger les images
 background = load_background_image()
