@@ -9,16 +9,10 @@ def load_background_image():
     background_image = pygame.image.load('ImageQuiBougent/image/paysage.jpg')
     return background_image
 
-# Charger l'image du joueur
-def load_player_image(normal=True):
-    image_path = 'ImageQuiBougent/image/sprite.png' if normal else 'ImageQuiBougent/image/sprite_saut.png'
-    player_image = pygame.image.load(image_path)
-    return player_image
-
 # Charger les images
 background = load_background_image()
-player_normal = load_player_image(normal=True)
-player_jump = load_player_image(normal=False)
+player_normal = pygame.image.load('ImageQuiBougent/image/sprite.png')
+player_jump = pygame.image.load('ImageQuiBougent/image/sprite_saut.png')
 player_back = pygame.image.load('ImageQuiBougent/image/sprite_arriere.png')
 player_repos = pygame.image.load('ImageQuiBougent/image/sprite_repos.png')
 
