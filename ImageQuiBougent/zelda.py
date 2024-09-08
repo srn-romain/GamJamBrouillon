@@ -4,7 +4,7 @@ import sys
 # Initialisation de Pygame
 pygame.init()
 
-# Charger l'image de fond
+# Charger l'image de fondTEST
 def load_background_image():
         background_image = pygame.image.load('ImageQuiBougent/image/paysage.jpg')
         return background_image
