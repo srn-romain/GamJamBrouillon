@@ -15,7 +15,7 @@ class Player:
         self.jump_image = pygame.image.load(jump_path)
         self.back_image = pygame.image.load(back_path)
         self.repos_image = pygame.image.load(repos_path)
-        self.rect = self.normal_image.get_rect(topleft=initial_position)
+        self.rect = self.normal_image.get_rect(midbottom=(initial_position[0], initial_position[1]))
         self.is_jumping = False
         self.jump_speed = 10
         self.gravity = 0.5
@@ -67,7 +67,6 @@ class Game:
                     sys.exit()
 
             keys = pygame.key.get_pressed()
-            self.player.handle_movement(keys)
 
             self.background.draw(self.screen)
             self.screen.blit(self.player.handle_movement(keys), self.player.rect)
