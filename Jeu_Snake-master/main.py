@@ -38,12 +38,12 @@ class Jeu:
 
         self.ecran_du_debut = True
 
-        self.image_tete_serpent = pygame.image.load('la_tete_du_serpent.png')
+        self.image_tete_serpent = pygame.image.load('./Jeu_Snake-master/la_tete_du_serpent.png')
 
 
         # Charger l'image
 
-        self.image = pygame.image.load('snake-game.jpg')
+        self.image = pygame.image.load('./Jeu_Snake-master/snake-game.jpg')
         # retrecir l'image
         self.image_titre = pygame.transform.scale(self.image,(200,100))
 
