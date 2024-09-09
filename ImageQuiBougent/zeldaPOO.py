@@ -34,7 +34,9 @@ class Player:
                 self.is_jumping = False
                 self.jump_velocity = 0
 
-        if keys[pygame.K_LEFT] and not self.is_jumping:
+        if keys[pygame.K_RIGHT] and keys[pygame.K_LEFT] and not self.is_jumping:
+            return self.repos_image
+        elif keys[pygame.K_LEFT] and not self.is_jumping:
             self.rect.left -= 5
             return self.back_image
         elif keys[pygame.K_RIGHT] and not self.is_jumping:
@@ -92,7 +94,7 @@ class Game:
             pygame.display.update()
             self.clock.tick(30)
 
-
+    
     def ecran_accueil_deux(self):
         """Affiche le deuxième écran d'accueil où les joueurs peuvent entrer leurs noms."""
         joueur_1_nom = ""
@@ -172,6 +174,10 @@ class Game:
 
             self.background.draw(self.screen)
             self.screen.blit(self.player.handle_movement(keys), self.player.rect)
+            if hasattr(self, 'nom_joueur_1'):
+                print(f"Le nom du joueur 1 est: {self.nom_joueur_1}")
+            if hasattr(self, 'nom_joueur_2'):
+                print(f"Le nom du joueur 2 est: {self.nom_joueur_2}")
             pygame.display.update()
             self.clock.tick(60)
 
